@@ -18,7 +18,6 @@ function typeWriter() {
   }
 }
 
-
  typeWriter();
  
 
