@@ -7,11 +7,10 @@ var speed = 50;
 var cont = 0;
 
 function typeWriter() {
-    
   if (cont < content.length) {
     text.textContent += content.charAt(cont);
     cont++;
-    
+    setTimeout(typeWriter, speed);
   } else {
     text.textContent = '';
     cont = 0;
@@ -22,6 +21,9 @@ function typeWriter() {
 
  typeWriter();
  
+
+
+
 
 
 // const titulo = document.querySelector('h1');
