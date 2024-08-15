@@ -1,117 +1,26 @@
-/* styles.css */
-/*
-body{
-    margin: 0;
-    font-family: "Poppins";
-    background: #f5f5f5;
-}
-.grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 30px;
-}
-
-header { 
-    padding: 20px 40px;
-    background: #fff;
-    align-items: center;
-}
-
-header h1 {
-    grid-column: span 6;
-}
-
-header nav{
-    grid-column: 7 / span 6;
-    justify-self: end;
-}
-
-header nav a {
-    color: #333;
-    margin-left: 10px;
-    text-decoration: none;
-}
-
-main{
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 20px;
-}
-
-main .welcome{
-    grid-column: span 6;
-}
-
-main img{
-    grid-column: span 6;
-    width: 100%;
-    border-radius: 6px;
-}
-main h2{
-    grid-column: span 12;
-    text-align: center;
-    font-size: 1.5em;
-    padding-top: 20px;
-}
-
-main .card{
-    grid-column: span 4;
-    background: #fff;
-    padding:10px 20px;
-    border-radius:6px;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05);
-}
-
-@media screen and (max-width: 960px){
-    main img{
-        grid-column: 2 / span 10;
-    }
-
-    main .welcome{
-        grid-column: 3/ span 8;
-    }
-
-    main .card {
-        grid-column: 3/ span 8;
-    }
-}
-
-
- monitor
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #333;
-    margin: 0;
-    color: #fff;
-    font-family: 'Courier New', Courier, monospace;
-}
- */
-
-
-
 /* Feito Por Mateus*/
 :root {
     --gap: 10px;
-  }
+}
+
+
 .container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     /* grid-auto-rows: minmax(100px, auto); */
-    grid-template-rows: auto 1fr auto; /* Define três linhas: uma para o header, uma para o main e uma para o footer */
-    min-height: 100vh; /* Faz com que a altura mínima seja igual à altura da tela */
+    grid-template-rows: auto 1fr auto;
+    /* Define três linhas: uma para o header, uma para o main e uma para o footer */
+    /* min-height: 100vh; */
+    /* Faz com que a altura mínima seja igual à altura da tela */
     /* max-width: 960px; */
     margin: 0;
     gap: var(--gap);
 }
 
 header {
-    grid-column: 2 / 12; 
+    grid-column: 2 / 12;
     display: grid;
-    grid-template-columns: repeat(12,1fr);
+    grid-template-columns: repeat(12, 1fr);
     gap: var(--gap);
     align-items: center;
 }
@@ -119,6 +28,7 @@ header {
 header h1 {
     grid-column: 1 / 6;
 }
+
 header nav {
     grid-column: 6 / -1;
     justify-self: end;
@@ -127,34 +37,45 @@ header nav {
 main {
     grid-column: 2/12;
     display: grid;
-    grid-template-columns: repeat(12,1fr);
+    grid-template-columns: repeat(12, 1fr);
     gap: var(--gap);
-    grid-auto-rows: auto ;
+    grid-auto-rows: auto;
     
+
 }
 
 /* criar uma div pra dividar em 2 e definir display*/
-.alinhamento{
+.alinhamento {
     grid-column: 1/-1;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--gap);
+    grid-auto-rows: auto;
 }
+
 
 #tagAlvo {
     font-size: 25px;
 }
 
-main img{
+main img {
     grid-column: 1;
-    height: 300px;
-    width: auto;
-    
+
+    width: 60%;
+    min-width: 300px;
+
     justify-self: center;
 }
+
 .welcome {
     grid-column: 2;
-    justify-self: left;
+    /* justify-self: left; */
+    width: 100%;
+    text-align: justify;
+}
+
+.welcome h1{
+    text-align: center;
 }
 
 
@@ -164,16 +85,20 @@ main img{
     margin-left: 5px;
     display: inline-block;
     animation: blink .7s infinite;
-  }
+}
 
-  @keyframes blink {
-    0%, 100% {
-      opacity: 1;
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
     }
+
     50% {
-      opacity: 0;
+        opacity: 0;
     }
-  }
+}
+
 /*fim da div pra dividir em 2 e evitar erros de alinhamento
 */
 
@@ -185,43 +110,100 @@ main h2 {
     justify-self: center;
 
 }
-main h3 p{
-    
+
+main h3 p {
     grid-column: 6/-1;
 }
 
-.projetos{
-    grid-row:3/3; 
+.projetos {
+    grid-row: 3/3;
     grid-column: 1/-1;
     grid-column: 2/12;
-    gap :20px;
+    gap: 20px;
     display: grid;
-    grid-template-columns: repeat(12,1fr);
-    
-    
+    grid-template-columns: repeat(12, 1fr);
+
+
 }
-main .card{
+
+main .card {
     grid-column: auto;
     background: #fff;
-    padding:10px 20px;
-    border-radius:6px;
+    padding: 10px 20px;
+    border-radius: 6px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05);
 }
 
-main .card:nth-child(1){
+main .card:nth-child(1) {
     background: red;
     grid-column: 1/5;
 }
-main .card:nth-child(2){
+
+main .card:nth-child(2) {
     background: red;
     grid-column: 5/9;
 }
-main .card:nth-child(3){
+
+main .card:nth-child(3) {
     background: red;
     grid-column: 9/-1;
 }
 
-footer{
+footer {
     grid-column: 1/-1;
+}
+
+/* footer {
+    position: fixed;    
+    bottom: 0;
+} */
+@media (max-width: 768px) {
+
+    main {
+        grid-column: 1/-1;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--gap);
+        grid-auto-rows: auto;
     
+    }
+
+    
+    main h2 {
+        grid-row: 3;
+        grid-column: 1/-1;
+        align-self: center;
+        justify-self: center;
+
+    }
+
+    .projetos {
+        grid-row: 4;
+        grid-column: 1/-1;
+        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    
+    
+    }
+    main img {
+        grid-column: 1/-1;
+
+        width: 60%;
+        min-width: 300px;
+
+        justify-self: center;
+    }
+
+    .welcome {
+        grid-column: 1/-1;
+        grid-row: 2;
+        text-align: justify;
+        
+        width: 100%;
+    }
+    .welcome h1{
+        text-align: center;
+    }
+
 }
