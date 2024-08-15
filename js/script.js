@@ -1,22 +1,28 @@
-// script.js
+// JS
+
+// JS
+
+var GetTexto =  document.getElementById("tagAlvo").textContent;
+var TagAlvoParaEscrita = document.getElementById("tagAlvo");
 
 
+var speed = 10;
+var cont = 0;
 
 
+function typeWriter() {
+  if(cont == 0) {
+    TagAlvoParaEscrita.textContent = '';
+  }
+  if (cont < GetTexto.length) {
+    TagAlvoParaEscrita.textContent += GetTexto.charAt(cont);
+    cont++;
+    setTimeout(typeWriter, speed);
+  } else {
+    cont = 0;
+  }
+}
 
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     const content = document.querySelector('.content');
-//     const text = "Olá! Sou Mateus e este é o meu portfólio. Aqui você encontrará...Olá! Sou Mateus e este é o meu portfólio. Aqui você encontrará..Olá! Sou Mateus e este é o meu portfólio. Aqui você encontrará..Olá! Sou Mateus e este é o meu portfólio. Aqui você encontrará..tfólio. Aqui você encontrará..tfólio. Aqui você encontrará..tfólio. Aqui você encontrará..tfólio. Aqui você encontrará..tfólio. Aqui você encontrará..";
-//     let index = 0;
-
-//     function typeEffect() {
-//         if (index < text.length) {
-//             content.innerHTML += text.charAt(index);
-//             index++;
-//             setTimeout(typeEffect, 50);
-//         }
-//     }
-
-//     typeEffect();
-// });
+typeWriter();
+setInterval(typeWriter, 90000);
+ 
